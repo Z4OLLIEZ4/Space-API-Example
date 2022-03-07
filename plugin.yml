@@ -1,0 +1,5 @@
+main: com.olliez4.spaceapiexample.main.Main
+name: SpaceAPIExample
+author: OLLIEZ4
+version: 1.0
+depend: [Space]
