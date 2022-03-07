@@ -45,7 +45,7 @@ boolean isMachine = spaceAPI.isMachine(ItemStack stack, String nbtIdentifier);
 Provides a general interface for creating machines. Please see the coded example for more understanding. These methods are quite simple and user friendly.
 
 
-Things to note:
+# Things to note:
 * The API automatically manages breaking, clicking and all inventory-related matters for machines. The only thing required of you to do is to manage placing machines as shown in the example code here.
 * Any ItemStack provided to the registerAsMachine() method will have specialised NBT added to it. As a result it is important you test for your machine using the isMachine() method and so remembering your nbt identifier you give the item is important (Supplied as a parameter to the registerAsMachine() method)
 * You should not attempt to "tick" machines yourself after placing them. Energy and oxygen inputs/outputs will be automatically managed based on the settings you provide when creating the machine, the functionality of said machine, and what is occuring in the surrounding network (if one exists)
