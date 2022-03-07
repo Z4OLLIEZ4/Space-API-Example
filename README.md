@@ -1,5 +1,10 @@
 # Space-API-Example
 A basic example on the functionality of the Space API. 
+* [Getting Started](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#getting-started)
+* [Items](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#items)
+* [World Management](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#world-management)
+* [Energy Networks And Machines](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#energy-networks-and-machines)
+* [Things to note](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#things-to-note)
 
 ## Getting started
 In order to intialise the Space API you'll need to create an instance of the SpaceAPI class
