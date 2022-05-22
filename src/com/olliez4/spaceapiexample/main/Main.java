@@ -48,12 +48,15 @@ public class Main extends JavaPlugin implements Listener {
 		int maxEnergy = 1000;
 		int oxygen = 0;
 		int maxOxygen = 750;
+		int coolant = 0;
+		int maxCoolant = 0;
 		boolean active = true;
 		boolean showHologram = true;
 		boolean emitsOxygen = false;
 		boolean emitsEnergy = false;
-		Machine machine = new Machine(name, energy, maxEnergy, oxygen, maxOxygen, location, active, showHologram,
-				emitsOxygen, emitsEnergy);
+		boolean emitsCoolant = false;
+		Machine machine = new Machine(name, energy, maxEnergy, oxygen, maxOxygen, coolant, maxCoolant, location, active,
+				showHologram, emitsOxygen, emitsEnergy, emitsCoolant);
 		machine.setHasInventory();
 		return machine;
 	}
