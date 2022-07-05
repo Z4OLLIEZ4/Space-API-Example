@@ -2,14 +2,16 @@ package com.olliez4.spaceapiexample.main;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.olliez4.space.energy.Machine;
+import com.olliez4.space.gui.guide.categories.Category;
+import com.olliez4.space.gui.guide.categories.CategoryManager;
 import com.olliez4.space.main.SpaceAPI;
 
 public class Main extends JavaPlugin implements Listener {
@@ -18,19 +20,31 @@ public class Main extends JavaPlugin implements Listener {
 	private SpaceAPI spaceAPI;
 	// This will be the actual placable machine item
 	private ItemStack machineStack;
+	// This will be the icon for our category in the space guide
+	private ItemStack iconStack;
 
 	public void onEnable() {
 		// Initialize the API
 		spaceAPI = new SpaceAPI();
 		// Register this class as an event
 		getServer().getPluginManager().registerEvents(this, this);
-		// Create our stack
+		// Create our machine stack
 		machineStack = new ItemStack(Material.GOLD_BLOCK);
-		// Register our stack as a machine
+		// Register our machine stack as a machine
 		spaceAPI.registerAsMachine(machineStack, "exampleMachine");
-		// Get the machine (Obviously do this bit differently)
-		for (Player p : getServer().getOnlinePlayers())
-			p.getInventory().addItem(machineStack);
+
+		// Create our category icon
+		iconStack = new ItemStack(Material.GOLD_BLOCK);
+		ItemMeta meta = iconStack.getItemMeta();
+		meta.setDisplayName("Category name");
+		iconStack.setItemMeta(meta);
+		
+		// Create our custom category
+		Category customCategory = new Category(iconStack);
+		// Add items to the category
+		customCategory.add(machineStack);
+		// Register the category with space
+		CategoryManager.registerCategory(customCategory);
 	}
 
 	@EventHandler
