@@ -2,6 +2,7 @@
 A basic example on the functionality of the Space API. 
 * [Getting Started](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#getting-started)
 * [Items](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#items)
+* [Categories](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#categories)
 * [World Management](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#world-management)
 * [Energy Networks And Machines](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#energy-networks-and-machines)
 * [Things to note](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#things-to-note)
@@ -19,6 +20,16 @@ Methods included:
 spaceAPI.getItems();
 ```
 Provides a class containing all of the items space uses
+## Categories
+```java
+// Create a category
+Category customCategory = new Category(ItemStack icon);
+// Add items to the category
+customCategory.add(ItemStack item);
+// Register category with the space guide
+CategoryManager.registerCategory(customCategory);
+```
+The Category API is to display custom items within the space guide easily, under automatically paged and sorted GUI's
 ## World Management
 ```java
 WorldManager worldManager = spaceAPI.getWorldManager();
