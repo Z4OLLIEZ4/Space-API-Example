@@ -21,9 +21,19 @@ spaceAPI.getItems();
 ```
 Provides a class containing all of the items space uses
 ## Categories
+### Space Guide + Space Cheat Guide
 ```java
-// Create a category
+// Create a category in both the space guide, and space cheat guide
 Category customCategory = new Category(ItemStack icon);
+// Add items to the category
+customCategory.add(ItemStack item);
+// Register category with the space guide
+CategoryManager.registerCategory(customCategory);
+```
+### Space Cheat Guide Only
+```java
+// Create a category in the space cheat guide
+CreativeCategory customCategory = new CreativeCategory(ItemStack icon);
 // Add items to the category
 customCategory.add(ItemStack item);
 // Register category with the space guide
