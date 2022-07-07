@@ -38,7 +38,7 @@ public class Main extends JavaPlugin implements Listener {
 		ItemMeta meta = iconStack.getItemMeta();
 		meta.setDisplayName("Category name");
 		iconStack.setItemMeta(meta);
-		
+
 		// Create our custom category
 		Category customCategory = new Category(iconStack);
 		// Add items to the category
@@ -50,7 +50,7 @@ public class Main extends JavaPlugin implements Listener {
 	@EventHandler
 	public void place(BlockPlaceEvent e) {
 		// Check whether or not the machine is our custom machine
-		if (spaceAPI.isMachine(machineStack, "exampleMachine"))
+		if (spaceAPI.isMachine(e.getItemInHand(), "exampleMachine"))
 			// Place the machine
 			spaceAPI.attemptPlaceMachine(machineStack, e, createMachine(e.getBlock().getLocation()));
 	}
