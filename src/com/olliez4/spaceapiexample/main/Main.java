@@ -30,14 +30,17 @@ public class Main extends JavaPlugin implements Listener {
 		getServer().getPluginManager().registerEvents(this, this);
 		// Create our machine stack
 		machineStack = new ItemStack(Material.GOLD_BLOCK);
+		ItemMeta machineMeta = machineStack.getItemMeta();
+		machineMeta.setDisplayName("Example Machine");
+		machineStack.setItemMeta(machineMeta);
 		// Register our machine stack as a machine
 		spaceAPI.registerAsMachine(machineStack, "exampleMachine");
 
 		// Create our category icon
 		iconStack = new ItemStack(Material.GOLD_BLOCK);
-		ItemMeta meta = iconStack.getItemMeta();
-		meta.setDisplayName("Category name");
-		iconStack.setItemMeta(meta);
+		ItemMeta iconMeta = iconStack.getItemMeta();
+		iconMeta.setDisplayName("Category name");
+		iconStack.setItemMeta(iconMeta);
 
 		// Create our custom category
 		Category customCategory = new Category(iconStack);
@@ -52,7 +55,7 @@ public class Main extends JavaPlugin implements Listener {
 		// Check whether or not the machine is our custom machine
 		if (spaceAPI.isMachine(e.getItemInHand(), "exampleMachine"))
 			// Place the machine
-			spaceAPI.attemptPlaceMachine(machineStack, e, createMachine(e.getBlock().getLocation()));
+			spaceAPI.attemptPlaceMachine(e.getItemInHand(), e, createMachine(e.getBlock().getLocation()));
 	}
 
 	// Create our custom machine with whatever options we require
