@@ -74,7 +74,7 @@ public class Main extends JavaPlugin implements Listener {
 		boolean emitsCoolant = false;
 		Machine machine = new Machine(name, energy, maxEnergy, oxygen, maxOxygen, coolant, maxCoolant, location, active,
 				showHologram, emitsOxygen, emitsEnergy, emitsCoolant);
-		machine.setHasInventory(23);
+		machine.setHasInventory(23); // Can take unlimited arguments, or an array list of integers
 		return machine;
 	}
 }
