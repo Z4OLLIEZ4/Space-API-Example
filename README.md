@@ -54,6 +54,13 @@ worldManager.isInSpaceWorld(Player player);
 worldManager.isPlanet(World world);
 ```
 
+It is also possible to get the last rocket takeoff location of a player from a planet.
+```java
+spaceAPI.getLastLocation(Player player, Planet planet);
+```
+* If the player has not visited the planet, it will return the world's spawn location
+* If the world relevant to the planet is not present, it will return null
+
 ## Energy networks and machines
 ```java
 // Must be called in order to register an ItemStack as a placable machine. Stores an nbtIdentifier within the item to test for later.
@@ -62,6 +69,8 @@ spaceAPI.registerAsMachine(ItemStack stack, String nbtIdentifier);
 spaceAPI.attemptPlaceMachine(ItemStack stack, BlockPlaceEvent event, String nbtIdentifier);
 // Tests whether or not a given ItemStack is a machine with a stored nbtIdentifier
 boolean isMachine = spaceAPI.isMachine(ItemStack stack, String nbtIdentifier);
+// Forcefully removes and terminates all energy networks in the given planet. This action is irreversible.
+spaceAPI.discardEnergyNetworks(Planet planet);
 ```
 Provides a general interface for creating machines. Please see the coded example for more understanding. These methods are quite simple and user friendly.
 
