@@ -75,6 +75,10 @@ spaceAPI.discardEnergyNetworks(Planet planet);
 spaceAPI.getMachineByBlock(Block b);
 // Gets the energy network in the location a block is, or returns null if one is not present
 spaceAPI.getNetworkByBlock(Block b);
+// Returns an integer of the current energy network tick speed loaded into space. Will auto-throttle for performance
+spaceAPI.getNetworkSpeed();
+// Returns an integer of the current energy density loaded into space. Will auto-throttle for performance
+spaceAPI.getNetworkEnergyDensity();
 ```
 Provides a general interface for creating machines. Please see the coded example for more understanding. These methods are quite simple and user friendly.
 
