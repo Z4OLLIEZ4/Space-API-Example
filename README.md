@@ -71,6 +71,10 @@ spaceAPI.attemptPlaceMachine(ItemStack stack, BlockPlaceEvent event, String nbtI
 boolean isMachine = spaceAPI.isMachine(ItemStack stack, String nbtIdentifier);
 // Forcefully removes and terminates all energy networks in the given planet. This action is irreversible.
 spaceAPI.discardEnergyNetworks(Planet planet);
+// Gets the machine in the location a block is, or returns null if one is not present
+spaceAPI.getMachineByBlock(Block b);
+// Gets the energy network in the location a block is, or returns null if one is not present
+spaceAPI.getNetworkByBlock(Block b);
 ```
 Provides a general interface for creating machines. Please see the coded example for more understanding. These methods are quite simple and user friendly.
 
