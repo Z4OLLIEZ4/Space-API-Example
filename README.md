@@ -72,13 +72,13 @@ boolean isMachine = spaceAPI.isMachine(ItemStack stack, String nbtIdentifier);
 // Forcefully removes and terminates all energy networks in the given planet. This action is irreversible.
 spaceAPI.discardEnergyNetworks(Planet planet);
 // Gets the machine in the location a block is, or returns null if one is not present
-spaceAPI.getMachineByBlock(Block b);
+Machine machine = spaceAPI.getMachineByBlock(Block b);
 // Gets the energy network in the location a block is, or returns null if one is not present
-spaceAPI.getNetworkByBlock(Block b);
+EnergyNetwork network = spaceAPI.getNetworkByBlock(Block b);
 // Returns an integer of the current energy network tick speed loaded into space. Will auto-throttle for performance
-spaceAPI.getNetworkSpeed();
+int speed = spaceAPI.getNetworkSpeed();
 // Returns an integer of the current energy density loaded into space. Will auto-throttle for performance
-spaceAPI.getNetworkEnergyDensity();
+int density = spaceAPI.getNetworkEnergyDensity();
 ```
 Provides a general interface for creating machines. Please see the coded example for more understanding. These methods are quite simple and user friendly.
 
