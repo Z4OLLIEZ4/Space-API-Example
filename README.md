@@ -5,6 +5,7 @@ A basic example on the functionality of the Space API.
 * [Categories](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#categories)
 * [World Management](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#world-management)
 * [Energy Networks And Machines](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#energy-networks-and-machines)
+* [Vehicles](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#vehicles)
 * [Things to note](https://github.com/Z4OLLIEZ4/Space-API-Example/blob/main/README.md#things-to-note)
 
 ## Getting started
@@ -82,6 +83,9 @@ int density = spaceAPI.getNetworkEnergyDensity();
 ```
 Provides a general interface for creating machines. Please see the coded example for more understanding. These methods are quite simple and user friendly.
 
+## Vehicles
+
+The Vehicle API will be documented at a later date. 
 
 # Things to note:
 * The API automatically manages breaking, clicking and all inventory-related matters for machines. The only thing required of you to do is to manage placing machines as shown in the example code here, and any auxiliary functions you want your machine to have.
