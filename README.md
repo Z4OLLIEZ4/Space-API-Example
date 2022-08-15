@@ -85,7 +85,35 @@ Provides a general interface for creating machines. Please see the coded example
 
 ## Vehicles
 
-The Vehicle API will be documented at a later date. 
+In order to create your own vehicle, it is first necessary to create a class extending Vehicle. This will be our base.
+```java
+public class CustomVehicle extends Vehicle {
+
+	public CustomVehicle() {
+		super(double topSpeed, double accelerationMultiplier, boolean shouldRotate, boolean canReverse, boolean canStep, boolean canFly, boolean canMoveOnGround, boolean airtight, ItemStack stack);
+	}
+
+}
+```
+Here is a breakdown of the arguments:
+| Argument | Data type | Function |
+|---|---|---|
+| topSpeed | double | Dictates the maximum velocity vector the vehicle can reach |
+| accelerationMultiplier | double | Dictates the acceleration the vehicle will use when being controlled (MUST BE GREATER THAN 1) |
+| shouldRotate | boolean | Dictates whether the vehicle model should rotate with where the player looks |
+| canReverse | boolean | Dictates whether the vehicle can move backwards |
+| canStep | boolean | Dictates whether the vehicle should automatically jump up one-block spaces |
+| canFly | boolean | Dictates whether the vehicle can fly whilst holding the spacebar |
+| canMoveOnGround | boolean | Dictates whether the vehicle can move whilst on the ground |
+| airtight | boolean | Dictates whether the player is safe from space exposure whilst using the vehicle |
+| stack | ItemStack | The actual item the vehicle is. This is the model that will display and that players can place to get the vehicle |
+
+It is then important to register your newly created Vehicle with Space, so that it can actually have function and work within the Vehicle ecosystem. In order to do this, use the following method:
+```java
+VehicleManager.registerVehicle(new CustomVehicle())
+```
+
+Where `new CustomVehicle()` is our Vehicle class we just created. This should only be accessed in a static way as shown above.
 
 # Things to note:
 * The API automatically manages breaking, clicking and all inventory-related matters for machines. The only thing required of you to do is to manage placing machines as shown in the example code here, and any auxiliary functions you want your machine to have.
